@@ -1,13 +1,13 @@
-openapi: 3.0.3
+openapi: 3.0.1
 info:
   title: AI Compliance Monitor API
   description: Comprehensive AI compliance monitoring system for MedTech with real-time safety checking, audit reporting, and regulatory compliance dashboard
   version: 1.0.0
   contact:
     name: AI Compliance Monitor
-    url: https://your-domain.com
+    url: https://ai-compliance-monitor.replit.app
 servers:
-  - url: https://your-domain.com/api
+  - url: https://ai-compliance-monitor.replit.app/api
     description: Production API Server
 
 paths:

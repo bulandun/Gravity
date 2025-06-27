@@ -9,9 +9,9 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://your-domain.com/openapi.yaml"
+    "url": "https://ai-compliance-monitor.replit.app/openapi.yaml"
   },
-  "logo_url": "https://your-domain.com/logo.png",
-  "contact_email": "support@your-domain.com",
-  "legal_info_url": "https://your-domain.com/legal"
+  "logo_url": "https://ai-compliance-monitor.replit.app/logo.png",
+  "contact_email": "support@ai-compliance-monitor.replit.app",
+  "legal_info_url": "https://ai-compliance-monitor.replit.app/legal"
 }
