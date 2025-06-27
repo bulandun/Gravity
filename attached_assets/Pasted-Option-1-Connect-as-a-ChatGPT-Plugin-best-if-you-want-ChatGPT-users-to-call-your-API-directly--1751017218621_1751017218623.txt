@@ -1,0 +1,76 @@
+Option 1: Connect as a ChatGPT Plugin (best if you want ChatGPT users to call your API directly)
+🔧 Step-by-Step:
+
+    Build or expose your API
+    Ensure your Gravity Flow Labs API is accessible over HTTPS and returns clean JSON responses.
+
+    Write an OpenAPI spec (Swagger)
+    Create a YAML or JSON definition of your API endpoints. For example:
+
+/scan:
+  post:
+    summary: Scan data for bias, PII, and documentation gaps
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DataInput'
+    responses:
+      200:
+        description: Scan Results
+
+Add a Plugin Manifest file
+/.well-known/ai-plugin.json (host this at your domain root)
+
+    {
+      "schema_version": "v1",
+      "name_for_model": "gravity_flow_labs",
+      "name_for_human": "Gravity Flow Labs",
+      "description_for_model": "Scan and validate clinical/AI data for bias, privacy, and compliance.",
+      "auth": {
+        "type": "none"
+      },
+      "api": {
+        "type": "openapi",
+        "url": "https://yourdomain.com/openapi.yaml"
+      },
+      "logo_url": "https://yourdomain.com/logo.png",
+      "contact_email": "support@gravityflowlabs.com",
+      "legal_info_url": "https://yourdomain.com/legal"
+    }
+
+    Host your API + Spec + Manifest
+    Use Vercel, Render, AWS, or your preferred host — must be HTTPS-accessible.
+
+    Install plugin in ChatGPT
+    In ChatGPT Pro with plugins enabled:
+
+        Click "Plugins" → "Plugin Store" → "Develop your own plugin"
+
+        Enter your domain
+
+        ChatGPT reads the manifest and auto-installs the plugin
+
+🧠 Example Use Case (how it works from ChatGPT):
+
+User says:
+
+    “Scan this clinical document for compliance and bias.”
+
+ChatGPT sends the document to your API endpoint like:
+
+POST https://gravityflowlabs.com/scan
+{
+  "document": "patient report text here..."
+}
+
+Your API returns:
+
+{
+  "privacy_issues": ["Name", "MRN"],
+  "bias_flags": ["gender skew"],
+  "compliance_score": 86,
+  "recommendation": "Mask identifiers, add missing consent form"
+}
+
+ChatGPT summarizes this intelligently for the user.

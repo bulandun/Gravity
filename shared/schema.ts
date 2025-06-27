@@ -17,8 +17,8 @@ export const aiOutputChecks = pgTable("ai_output_checks", {
   outputData: text("output_data").notNull(),
   status: varchar("status", { length: 50 }).notNull(),
   riskScore: real("risk_score").notNull(),
-  reasons: jsonb("reasons").$type<string[]>().default([]),
-  metadata: jsonb("metadata").$type<Record<string, any>>().default({}),
+  reasons: jsonb("reasons").$type<string[]>().notNull().default([]),
+  metadata: jsonb("metadata").$type<Record<string, any>>().notNull().default({}),
 });
 
 export const trainingDataScans = pgTable("training_data_scans", {
@@ -44,7 +44,7 @@ export const auditReports = pgTable("audit_reports", {
   status: varchar("status", { length: 50 }).notNull(),
   complianceFramework: varchar("compliance_framework", { length: 100 }).notNull(),
   findings: jsonb("findings").$type<Record<string, any>>().notNull(),
-  recommendations: jsonb("recommendations").$type<string[]>().default([]),
+  recommendations: jsonb("recommendations").$type<string[]>().notNull().default([]),
   pdfPath: text("pdf_path"),
 });
 

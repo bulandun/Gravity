@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "AI Compliance Monitor",
+  "name_for_model": "ai_compliance_monitor",
+  "description_for_human": "Monitor AI model compliance with HIPAA, GDPR, and other medical/regulatory frameworks. Check AI outputs for safety, scan training data, generate audit reports, and track model drift and bias.",
+  "description_for_model": "This plugin provides comprehensive AI compliance monitoring capabilities for healthcare and regulated industries. It can check AI model outputs for compliance violations, scan training datasets for privacy risks and bias, generate regulatory audit reports, monitor model drift over time, and track bias across demographic groups. The plugin supports HIPAA, GDPR, FDA, and other regulatory frameworks commonly used in medical technology and healthcare AI applications.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://your-domain.com/openapi.yaml"
+  },
+  "logo_url": "https://your-domain.com/logo.png",
+  "contact_email": "support@your-domain.com",
+  "legal_info_url": "https://your-domain.com/legal"
+}

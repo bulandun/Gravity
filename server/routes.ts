@@ -31,6 +31,18 @@ const scanTrainingDataSchema = z.object({
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
+  // CORS middleware for external API access
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    if (req.method === 'OPTIONS') {
+      res.sendStatus(200);
+    } else {
+      next();
+    }
+  });
+  
   // POST /api/check-output - AI output safety checking
   app.post("/api/check-output", async (req, res) => {
     try {
@@ -89,7 +101,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         privacyRisks: analysisResults.privacyRisks,
         biasFlags: analysisResults.biasFlags,
         missingDocs: analysisResults.missingDocs,
-        scanResults: analysisResults,
+        scanResults: analysisResults as Record<string, any>,
         status: "completed",
       });
 
@@ -235,6 +247,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Serve OpenAPI specification
+  app.get("/openapi.yaml", (req, res) => {
+    res.sendFile("/openapi.yaml", { root: process.cwd() });
+  });
+
+  // Serve plugin manifest
+  app.get("/.well-known/ai-plugin.json", (req, res) => {
+    res.sendFile("/ai-plugin.json", { root: process.cwd() });
+  });
+
   // POST /api/generate-report - Generate new audit report
   app.post("/api/generate-report", async (req, res) => {
     try {
@@ -249,7 +271,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         description,
         status: "generated",
         complianceFramework,
-        findings,
+        findings: findings as Record<string, any>,
         recommendations,
       });
 
