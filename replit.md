@@ -88,7 +88,13 @@ Key tables include:
 
 ```
 Changelog:
-- June 27, 2025. Initial setup
+- June 27, 2025: Initial setup with React frontend and Express backend
+- June 27, 2025: Added comprehensive API endpoints for AI compliance monitoring
+- June 27, 2025: Integrated CORS support for external API access
+- June 27, 2025: Created OpenAPI specification and ChatGPT plugin manifest
+- June 27, 2025: Implemented database storage with PostgreSQL and Drizzle ORM
+- June 27, 2025: Added comprehensive dashboard with compliance metrics visualization
+- June 27, 2025: Completed ChatGPT plugin integration files for deployment
 ```
 
 ## User Preferences
