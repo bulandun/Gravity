@@ -36,24 +36,24 @@ You need to deploy this application to a public HTTPS endpoint. Options include:
 
 ### 2. Update Configuration Files
 
-After deployment, update these files with your actual domain:
+After deployment, update these files with your actual domain. If deploying to Vercel, for example `https://gravity-topaz.vercel.app`, the configuration would look like:
 
 **ai-plugin.json:**
 ```json
 {
   "api": {
-    "url": "https://your-actual-domain.com/openapi.yaml"
+    "url": "https://gravity-topaz.vercel.app/openapi.yaml"
   },
-  "logo_url": "https://your-actual-domain.com/logo.png",
-  "contact_email": "your-email@domain.com",
-  "legal_info_url": "https://your-actual-domain.com/legal"
+  "logo_url": "https://gravity-topaz.vercel.app/logo.png",
+  "contact_email": "support@gravity-topaz.vercel.app",
+  "legal_info_url": "https://gravity-topaz.vercel.app/legal"
 }
 ```
 
 **openapi.yaml:**
 ```yaml
 servers:
-  - url: https://your-actual-domain.com/api
+  - url: https://gravity-topaz.vercel.app/api
     description: Production API Server
 ```
 
@@ -83,15 +83,23 @@ Try these example prompts in ChatGPT:
 
 ## Local Development
 
+Run the setup script once to install dependencies:
+
 ```bash
 # Install dependencies
-npm install
+npm run setup
 
 # Start development server
 npm run dev
 
 # Push database schema
 npm run db:push
+```
+
+After dependencies are installed, you can verify TypeScript types with:
+
+```bash
+npm run check
 ```
 
 ## Environment Variables Required
