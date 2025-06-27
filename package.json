@@ -8,6 +8,7 @@
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist && cp openapi.yaml dist/public/openapi.yaml && mkdir -p dist/public/.well-known && cp ai-plugin.json dist/public/.well-known/ai-plugin.json",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
+    "setup": "bash scripts/setup.sh",
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
