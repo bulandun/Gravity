@@ -12,6 +12,5 @@
     "url": "https://gravity-topaz.vercel.app/openapi.yaml"
   },
   "logo_url": "https://gravity-topaz.vercel.app/logo.png",
-  "contact_email": "support@your-app-name.vercel.app",
-  "legal_info_url": "https://your-app-name.vercel.app/legal"
+  
 }
