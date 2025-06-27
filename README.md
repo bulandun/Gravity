@@ -23,10 +23,10 @@ This is a comprehensive AI compliance monitoring system for MedTech that can be 
 
 You need to deploy this application to a public HTTPS endpoint. Options include:
 
-**Replit (Current deployment):**
-- Already deployed at: `https://ai-compliance-shield-brendandonnell3.replit.app`
-- OpenAPI spec available at: `https://ai-compliance-shield-brendandonnell3.replit.app/openapi.yaml`
-- Plugin manifest at: `https://ai-compliance-shield-brendandonnell3.replit.app/.well-known/ai-plugin.json`
+**Vercel (Current deployment):**
+- Already deployed at: `https://gravity-topaz.vercel.app`
+- OpenAPI spec available at: `https://gravity-topaz.vercel.app/openapi.yaml`
+- Plugin manifest at: `https://gravity-topaz.vercel.app/.well-known/ai-plugin.json`
 
 **Other hosting options:**
 - Vercel: `npm run build` then deploy

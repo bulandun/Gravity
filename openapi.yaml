@@ -5,9 +5,9 @@ info:
   version: 1.0.0
   contact:
     name: AI Compliance Monitor
-    url: https://ai-compliance-monitor.replit.app
+    url: https://gravity-topaz.vercel.app
 servers:
-  - url: "https://your-app-name.vercel.app/api"
+  - url: "https://gravity-topaz.vercel.app/api"
     description: "Production API Server"
 
 paths:
