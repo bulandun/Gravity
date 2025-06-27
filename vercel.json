@@ -1,42 +1,30 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "server/index.ts",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "client/**/*",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server/index.ts"
-    },
-    {
-      "src": "/openapi.yaml",
-      "dest": "/openapi.yaml"
-    },
-    {
-      "src": "/.well-known/ai-plugin.json",
-      "dest": "/ai-plugin.json"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/client/dist/$1"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "functions": {
-    "server/index.ts": {
-      "maxDuration": 30
-    }
-  }
+"version": 2,
+"builds": [
+{
+"src": "package.json",
+"use": "@vercel/static-build",
+"config": {
+"buildCommand": "npm run build",
+"outputDirectory": "dist/public"
+}
+},
+{
+"src": "dist/server/index.js",
+"use": "@vercel/node"
+}
+],
+"routes": [
+{
+"src": "/api/(.*)",
+"dest": "/dist/server/index.js"
+},
+{
+"handle": "filesystem"
+},
+{
+"src": "/(.*)",
+"dest": "/dist/public/$1"
+}
+]
 }
