@@ -7,8 +7,8 @@ info:
     name: AI Compliance Monitor
     url: https://ai-compliance-monitor.replit.app
 servers:
-  - url: https://ai-compliance-monitor.replit.app/api
-    description: Production API Server
+  - url: "https://ai-compliance-shield-brendandonnell3.replit.app/api"
+    description: "Production API Server"
 
 paths:
   /check-output:

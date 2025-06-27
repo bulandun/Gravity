@@ -23,9 +23,10 @@ This is a comprehensive AI compliance monitoring system for MedTech that can be 
 
 You need to deploy this application to a public HTTPS endpoint. Options include:
 
-**Replit (Recommended for testing):**
-- Click "Deploy" in your Replit environment
-- Your API will be available at `https://your-repl-name.your-username.replit.app`
+**Replit (Current deployment):**
+- Already deployed at: `https://ai-compliance-shield-brendandonnell3.replit.app`
+- OpenAPI spec available at: `https://ai-compliance-shield-brendandonnell3.replit.app/openapi.yaml`
+- Plugin manifest at: `https://ai-compliance-shield-brendandonnell3.replit.app/.well-known/ai-plugin.json`
 
 **Other hosting options:**
 - Vercel: `npm run build` then deploy

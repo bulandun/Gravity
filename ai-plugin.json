@@ -9,9 +9,9 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://ai-compliance-monitor.replit.app/openapi.yaml"
+    "url": "https://ai-compliance-shield-brendandonnell3.replit.app/openapi.yaml"
   },
-  "logo_url": "https://ai-compliance-monitor.replit.app/logo.png",
-  "contact_email": "support@ai-compliance-monitor.replit.app",
-  "legal_info_url": "https://ai-compliance-monitor.replit.app/legal"
+  "logo_url": "https://ai-compliance-shield-brendandonnell3.replit.app/logo.png",
+  "contact_email": "support@ai-compliance-shield-brendandonnell3.replit.app",
+  "legal_info_url": "https://ai-compliance-shield-brendandonnell3.replit.app/legal"
 }
