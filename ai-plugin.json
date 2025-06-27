@@ -9,9 +9,9 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://your-app-name.vercel.app/openapi.yaml"
+    "url": "https://gravity-topaz.vercel.app/openapi.yaml"
   },
-  "logo_url": "https://your-app-name.vercel.app/logo.png",
+  "logo_url": "https://gravity-topaz.vercel.app/logo.png",
   "contact_email": "support@your-app-name.vercel.app",
   "legal_info_url": "https://your-app-name.vercel.app/legal"
 }
